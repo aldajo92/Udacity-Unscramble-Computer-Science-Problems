@@ -22,13 +22,29 @@ September 2016.".
 """
 
 longest = 0
-longest_call = []
+longest_key = None
+longest_call = {}
 
 for call in calls:
     call_duration = int(call[3])
-    if call_duration > longest:
-        longest = call_duration
-        longest_call = call
+
+    if call[0] in longest_call.keys():
+        longest_call[call[0]] = longest_call[call[0]] + call_duration
+    else:
+        longest_call[call[0]] = call_duration
+
+    if call[1] in longest_call.keys():
+        longest_call[call[1]] = longest_call[call[1]] + call_duration
+    else:
+        longest_call[call[1]] = call_duration
+
+    if longest_call[call[0]] > longest:
+        longest_key = call[0]
+        longest = longest_call[call[0]]
+
+    if longest_call[call[1]] > longest:
+        longest_key = call[1]
+        longest = longest_call[call[1]]
 
 print("{} spent the longest time, {} seconds, on the phone during September 2016."
-      .format(longest_call[0], longest_call[3]))
+      .format(longest_key, longest))
