@@ -1,0 +1,19 @@
+Task0:
+    Time Complexity: O(1)
+    Space Complexity: O(1)
+
+Task1:
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+
+Task2:
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+
+Task3:
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+
+Task4:
+    Time Complexity: O(n)
+    Space Complexity: O(n)
