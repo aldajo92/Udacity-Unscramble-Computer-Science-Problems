@@ -52,19 +52,17 @@ for call in calls:
             end_index_code = call[1].index(')')
             code = call[1][1:end_index_code]
             list_codes.append(code)
-            # print (code)
 
         elif call[1][:3] == "140":
             list_codes.append("140")
-            # print ("140")
         else:
             list_codes.append(call[1][:4])
-            # print(call[1][:4])
 
 codes_size = len(list_codes)
 count = list_codes.count('080')
 called_numbers = sorted(set(list_codes))
 
+sorted(called_numbers)
 print("The numbers called by people in Bangalore have codes:")
 for code in called_numbers:
     print(code)

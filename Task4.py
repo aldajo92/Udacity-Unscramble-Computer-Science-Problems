@@ -25,3 +25,22 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+telemarkers = set()
+
+for call in calls:
+    telemarkers.add(call[0])
+
+for call in calls:
+    if call[1] in telemarkers:
+        telemarkers.remove(call[1])
+
+for text in texts:
+    if text[0] in telemarkers:
+        telemarkers.remove(text[0])
+    if text[1] in telemarkers:
+        telemarkers.remove(text[1])
+
+print("These numbers could be telemarketers: ")
+sorted(telemarkers)
+for telemarker in telemarkers:
+    print(telemarker)
