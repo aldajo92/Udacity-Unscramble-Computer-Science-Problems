@@ -19,29 +19,18 @@ Print a message:
 "There are <count> different telephone numbers in the records."
 """
 
-different_records = []
+text_out_set = set([text[0] for text in texts])
+text_in_set = set([text[1] for text in texts])
 
+call_out_set = set([call[0] for call in calls])
+call_in_set = set([call[1] for call in calls])
 
-def element_exist_in_array(element, array):
-    if element not in array:
-        array.append(element)
-    return array
+different_records = set()
 
+different_records.update(text_out_set)
+different_records.update(text_in_set)
 
-for text in texts:
-    element_exist_in_array(text[0], different_records)
-    element_exist_in_array(text[1], different_records)
-    # if text[0] not in different_records:
-    #     different_records.append(text[0])
-    # if text[1] not in different_records:
-    #     different_records.append(text[1])
-
-for call in calls:
-    element_exist_in_array(call[0], different_records)
-    element_exist_in_array(call[1], different_records)
-    # if call[0] not in different_records:
-    #     different_records.append(call[0])
-    # if call[1] not in different_records:
-    #     different_records.append(call[1])
+different_records.update(call_out_set)
+different_records.update(call_in_set)
 
 print("There are {} different telephone numbers in the records.".format(len(different_records)))

@@ -62,7 +62,6 @@ codes_size = len(list_codes)
 count = list_codes.count('080')
 called_numbers = sorted(set(list_codes))
 
-sorted(called_numbers)
 print("The numbers called by people in Bangalore have codes:")
 for code in called_numbers:
     print(code)

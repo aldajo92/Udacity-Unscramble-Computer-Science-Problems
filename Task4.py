@@ -41,6 +41,6 @@ for text in texts:
         telemarkers.remove(text[1])
 
 print("These numbers could be telemarketers: ")
-sorted(telemarkers)
-for telemarker in telemarkers:
+telemarkerSorted = sorted(telemarkers)
+for telemarker in telemarkerSorted:
     print(telemarker)
